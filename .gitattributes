@@ -1,0 +1,1 @@
+sdk64/ffmpeg/lib/x64/*.lib filter=lfs diff=lfs merge=lfs -text
