@@ -4,38 +4,38 @@
 
 #include "PixelType.h"
 
-/// \~chinese Êä³öÖ¡µÄĞÅÏ¢             \~english Output Frame Information
+/// \~chinese è¾“å‡ºå¸§çš„ä¿¡æ¯             \~english Output Frame Information
 typedef struct _MV_FRAME_OUT_INFO_
 {
-    unsigned short      nWidth;             ///< [OUT]  \~chinese Í¼Ïñ¿í            \~english Image Width
-    unsigned short      nHeight;            ///< [OUT]  \~chinese Í¼Ïñ¸ß            \~english Image Height
-    enum MvGvspPixelType    enPixelType;    ///< [OUT]  \~chinese ÏñËØ¸ñÊ½          \~english Pixel Type
+    unsigned short      nWidth;             ///< [OUT]  \~chinese å›¾åƒå®½            \~english Image Width
+    unsigned short      nHeight;            ///< [OUT]  \~chinese å›¾åƒé«˜            \~english Image Height
+    enum MvGvspPixelType    enPixelType;    ///< [OUT]  \~chinese åƒç´ æ ¼å¼          \~english Pixel Type
 
-    unsigned int        nFrameNum;          ///< [OUT]  \~chinese Ö¡ºÅ              \~english Frame Number
-    unsigned int        nDevTimeStampHigh;  ///< [OUT]  \~chinese Ê±¼ä´Á¸ß32Î»      \~english Timestamp high 32 bits
-    unsigned int        nDevTimeStampLow;   ///< [OUT]  \~chinese Ê±¼ä´ÁµÍ32Î»      \~english Timestamp low 32 bits
-    unsigned int        nReserved0;         ///< [OUT]  \~chinese ±£Áô£¬8×Ö½Ú¶ÔÆë   \~english Reserved, 8-byte aligned
-    int64_t             nHostTimeStamp;     ///< [OUT]  \~chinese Ö÷»úÉú³ÉµÄÊ±¼ä´Á  \~english Host-generated timestamp
+    unsigned int        nFrameNum;          ///< [OUT]  \~chinese å¸§å·              \~english Frame Number
+    unsigned int        nDevTimeStampHigh;  ///< [OUT]  \~chinese æ—¶é—´æˆ³é«˜32ä½      \~english Timestamp high 32 bits
+    unsigned int        nDevTimeStampLow;   ///< [OUT]  \~chinese æ—¶é—´æˆ³ä½32ä½      \~english Timestamp low 32 bits
+    unsigned int        nReserved0;         ///< [OUT]  \~chinese ä¿ç•™ï¼Œ8å­—èŠ‚å¯¹é½   \~english Reserved, 8-byte aligned
+    int64_t             nHostTimeStamp;     ///< [OUT]  \~chinese ä¸»æœºç”Ÿæˆçš„æ—¶é—´æˆ³  \~english Host-generated timestamp
 
     unsigned int        nFrameLen;
 
-    unsigned int        nLostPacket;  // ±¾Ö¡¶ª°üÊı
+    unsigned int        nLostPacket;  // æœ¬å¸§ä¸¢åŒ…æ•°
     unsigned int        nReserved[2];
 }MV_FRAME_OUT_INFO;
 
-/// \~chinese ±£´æÍ¼Æ¬²ÎÊı            \~english Save image type
+/// \~chinese ä¿å­˜å›¾ç‰‡å‚æ•°            \~english Save image type
 typedef struct _MV_SAVE_IMAGE_PARAM_T_
 {
-    unsigned char*      pData;              ///< [IN]   \~chinese ÊäÈëÊı¾İ»º´æ      \~english Input Data Buffer
-    unsigned int        nDataLen;           ///< [IN]   \~chinese ÊäÈëÊı¾İ´óĞ¡      \~english Input Data Size
-    enum MvGvspPixelType    enPixelType;    ///< [IN]   \~chinese ÊäÈëÏñËØ¸ñÊ½      \~english Input Data Pixel Format
-    unsigned short      nWidth;             ///< [IN]   \~chinese Í¼Ïñ¿í            \~english Image Width
-    unsigned short      nHeight;            ///< [IN]   \~chinese Í¼Ïñ¸ß            \~english Image Height
+    unsigned char*      pData;              ///< [IN]   \~chinese è¾“å…¥æ•°æ®ç¼“å­˜      \~english Input Data Buffer
+    unsigned int        nDataLen;           ///< [IN]   \~chinese è¾“å…¥æ•°æ®å¤§å°      \~english Input Data Size
+    enum MvGvspPixelType    enPixelType;    ///< [IN]   \~chinese è¾“å…¥åƒç´ æ ¼å¼      \~english Input Data Pixel Format
+    unsigned short      nWidth;             ///< [IN]   \~chinese å›¾åƒå®½            \~english Image Width
+    unsigned short      nHeight;            ///< [IN]   \~chinese å›¾åƒé«˜            \~english Image Height
 
-    unsigned char*      pImageBuffer;       ///< [OUT]  \~chinese Êä³öÍ¼Æ¬»º´æ      \~english Output Image Buffer
-    unsigned int        nImageLen;          ///< [OUT]  \~chinese Êä³öÍ¼Æ¬´óĞ¡      \~english Output Image Size
-    unsigned int        nBufferSize;        ///< [IN]   \~chinese Ìá¹©µÄÊä³ö»º³åÇø´óĞ¡  \~english Output buffer size provided
-    enum MV_SAVE_IAMGE_TYPE enImageType;    ///< [IN]   \~chinese Êä³öÍ¼Æ¬¸ñÊ½      \~english Output Image Format
+    unsigned char*      pImageBuffer;       ///< [OUT]  \~chinese è¾“å‡ºå›¾ç‰‡ç¼“å­˜      \~english Output Image Buffer
+    unsigned int        nImageLen;          ///< [OUT]  \~chinese è¾“å‡ºå›¾ç‰‡å¤§å°      \~english Output Image Size
+    unsigned int        nBufferSize;        ///< [IN]   \~chinese æä¾›çš„è¾“å‡ºç¼“å†²åŒºå¤§å°  \~english Output buffer size provided
+    enum MV_SAVE_IAMGE_TYPE enImageType;    ///< [IN]   \~chinese è¾“å‡ºå›¾ç‰‡æ ¼å¼      \~english Output Image Format
 
 }MV_SAVE_IMAGE_PARAM;
 
@@ -55,104 +55,104 @@ typedef struct _MV_IMAGE_BASIC_INFO_
     float               fFrameRateMin;
     float               fFrameRateMax;
 
-    unsigned int        enPixelType;        ///< [OUT]  \~chinese µ±Ç°µÄÏñËØ¸ñÊ½    \~english Current pixel format
-    unsigned int        nSupportedPixelFmtNum;  ///< [OUT]  \~chinese Ö§³ÖµÄÏñËØ¸ñÊ½ÖÖÀà    \~english Support pixel format
+    unsigned int        enPixelType;        ///< [OUT]  \~chinese å½“å‰çš„åƒç´ æ ¼å¼    \~english Current pixel format
+    unsigned int        nSupportedPixelFmtNum;  ///< [OUT]  \~chinese æ”¯æŒçš„åƒç´ æ ¼å¼ç§ç±»    \~english Support pixel format
     unsigned int        enPixelList[MV_MAX_XML_SYMBOLIC_NUM];
     unsigned int        nReserved[8];
 
 }MV_IMAGE_BASIC_INFO;
 
 
-/// \~chinese ÔëÉùÌØĞÔÀàĞÍ    \~english Noise feature type
+/// \~chinese å™ªå£°ç‰¹æ€§ç±»å‹    \~english Noise feature type
 typedef enum _MV_CC_BAYER_NOISE_FEATURE_TYPE
 {
-    MV_CC_BAYER_NOISE_FEATURE_TYPE_INVALID = 0, ///<        \~chinese ÎŞĞ§Öµ                        \~english Invalid
-    MV_CC_BAYER_NOISE_FEATURE_TYPE_PROFILE = 1, ///<        \~chinese ÔëÉùÇúÏß                      \~english Noise curve
-    MV_CC_BAYER_NOISE_FEATURE_TYPE_LEVEL   = 2, ///<        \~chinese ÔëÉùË®Æ½                      \~english Noise level
-    MV_CC_BAYER_NOISE_FEATURE_TYPE_DEFAULT = 1, ///<        \~chinese Ä¬ÈÏÖµ                        \~english Default
+    MV_CC_BAYER_NOISE_FEATURE_TYPE_INVALID = 0, ///<        \~chinese æ— æ•ˆå€¼                        \~english Invalid
+    MV_CC_BAYER_NOISE_FEATURE_TYPE_PROFILE = 1, ///<        \~chinese å™ªå£°æ›²çº¿                      \~english Noise curve
+    MV_CC_BAYER_NOISE_FEATURE_TYPE_LEVEL   = 2, ///<        \~chinese å™ªå£°æ°´å¹³                      \~english Noise level
+    MV_CC_BAYER_NOISE_FEATURE_TYPE_DEFAULT = 1, ///<        \~chinese é»˜è®¤å€¼                        \~english Default
 
 }MV_CC_BAYER_NOISE_FEATURE_TYPE;
 
-/// \~chinese Bayer¸ñÊ½½µÔëÌØĞÔĞÅÏ¢    \~english Denoise profile info
+/// \~chinese Bayeræ ¼å¼é™å™ªç‰¹æ€§ä¿¡æ¯    \~english Denoise profile info
 typedef struct _MV_CC_BAYER_NOISE_PROFILE_INFO_T_
 {
-    unsigned int        nVersion;           ///<  \~chinese °æ±¾                           \~english version
-    MV_CC_BAYER_NOISE_FEATURE_TYPE enNoiseFeatureType;  ///<  \~chinese ÔëÉùÌØĞÔÀàĞÍ       \~english noise feature type
-    enum MvGvspPixelType    enPixelType;    ///<  \~chinese Í¼Ïñ¸ñÊ½                       \~english image format
-    int                 nNoiseLevel;        ///<  \~chinese Æ½¾ùÔëÉùË®Æ½                   \~english noise level
-    unsigned int        nCurvePointNum;     ///<  \~chinese ÇúÏßµãÊı                       \~english curve point number
-    int*                nNoiseCurve;        ///<  \~chinese ÔëÉùÇúÏß                       \~english noise curve
-    int*                nLumCurve;          ///<  \~chinese ÁÁ¶ÈÇúÏß                       \~english luminance curve
+    unsigned int        nVersion;           ///<  \~chinese ç‰ˆæœ¬                           \~english version
+    MV_CC_BAYER_NOISE_FEATURE_TYPE enNoiseFeatureType;  ///<  \~chinese å™ªå£°ç‰¹æ€§ç±»å‹       \~english noise feature type
+    enum MvGvspPixelType    enPixelType;    ///<  \~chinese å›¾åƒæ ¼å¼                       \~english image format
+    int                 nNoiseLevel;        ///<  \~chinese å¹³å‡å™ªå£°æ°´å¹³                   \~english noise level
+    unsigned int        nCurvePointNum;     ///<  \~chinese æ›²çº¿ç‚¹æ•°                       \~english curve point number
+    int*                nNoiseCurve;        ///<  \~chinese å™ªå£°æ›²çº¿                       \~english noise curve
+    int*                nLumCurve;          ///<  \~chinese äº®åº¦æ›²çº¿                       \~english luminance curve
 
-    unsigned int        nRes[8];            ///<       \~chinese Ô¤Áô                           \~english Reserved
+    unsigned int        nRes[8];            ///<       \~chinese é¢„ç•™                           \~english Reserved
 
 }MV_CC_BAYER_NOISE_PROFILE_INFO;
 
-/// \~chinese Bayer¸ñÊ½ÔëÉù¹À¼Æ²ÎÊı    \~english Bayer noise estimate param
+/// \~chinese Bayeræ ¼å¼å™ªå£°ä¼°è®¡å‚æ•°    \~english Bayer noise estimate param
 typedef struct _MV_CC_BAYER_NOISE_ESTIMATE_PARAM_T_
 {
-    unsigned int        nWidth;             ///< [IN]  \~chinese Í¼Ïñ¿í(´óÓÚµÈÓÚ8)              \~english Width
-    unsigned int        nHeight;            ///< [IN]  \~chinese Í¼Ïñ¸ß(´óÓÚµÈÓÚ8)              \~english Height
-    enum MvGvspPixelType    enPixelType;    ///< [IN]  \~chinese ÏñËØ¸ñÊ½                       \~english Pixel format
+    unsigned int        nWidth;             ///< [IN]  \~chinese å›¾åƒå®½(å¤§äºç­‰äº8)              \~english Width
+    unsigned int        nHeight;            ///< [IN]  \~chinese å›¾åƒé«˜(å¤§äºç­‰äº8)              \~english Height
+    enum MvGvspPixelType    enPixelType;    ///< [IN]  \~chinese åƒç´ æ ¼å¼                       \~english Pixel format
 
-    unsigned char*      pSrcData;           ///< [IN]  \~chinese ÊäÈëÊı¾İ»º´æ                   \~english Input data buffer
-    unsigned int        nSrcDataLen;        ///< [IN]  \~chinese ÊäÈëÊı¾İ´óĞ¡                   \~english Input data size
+    unsigned char*      pSrcData;           ///< [IN]  \~chinese è¾“å…¥æ•°æ®ç¼“å­˜                   \~english Input data buffer
+    unsigned int        nSrcDataLen;        ///< [IN]  \~chinese è¾“å…¥æ•°æ®å¤§å°                   \~english Input data size
 
-    unsigned int        nNoiseThreshold;    ///< [IN]  \~chinese ÔëÉùãĞÖµ(0-4095)               \~english Noise Threshold
+    unsigned int        nNoiseThreshold;    ///< [IN]  \~chinese å™ªå£°é˜ˆå€¼(0-4095)               \~english Noise Threshold
 
-    unsigned char*      pCurveBuf;          ///< [IN]  \~chinese ÓÃÓÚ´æ´¢ÔëÉùÇúÏßºÍÁÁ¶ÈÇúÏß£¨ĞèÒªÍâ²¿·ÖÅä£¬»º´æ´óĞ¡£º4096 * sizeof(int) * 2£©     \~english Buffer used to store noise and brightness curves, size:4096 * sizeof(int) * 2)
-    MV_CC_BAYER_NOISE_PROFILE_INFO stNoiseProfile; ///< [OUT]  \~chinese ½µÔëÌØĞÔĞÅÏ¢               \~english Denoise profile
+    unsigned char*      pCurveBuf;          ///< [IN]  \~chinese ç”¨äºå­˜å‚¨å™ªå£°æ›²çº¿å’Œäº®åº¦æ›²çº¿ï¼ˆéœ€è¦å¤–éƒ¨åˆ†é…ï¼Œç¼“å­˜å¤§å°ï¼š4096 * sizeof(int) * 2ï¼‰     \~english Buffer used to store noise and brightness curves, size:4096 * sizeof(int) * 2)
+    MV_CC_BAYER_NOISE_PROFILE_INFO stNoiseProfile; ///< [OUT]  \~chinese é™å™ªç‰¹æ€§ä¿¡æ¯               \~english Denoise profile
 
-    unsigned int        nThreadNum;         ///< [IN]  \~chinese Ïß³ÌÊıÁ¿£¬0±íÊ¾Ëã·¨¿â¸ù¾İÓ²¼ş×ÔÊÊÓ¦£»1±íÊ¾µ¥Ïß³Ì£¨Ä¬ÈÏ£©£»´óÓÚ1±íÊ¾Ïß³ÌÊıÄ¿      \~english Thread number, 0 means that the library is adaptive to the hardware, 1 means single thread(Default value), Greater than 1 indicates the number of threads
+    unsigned int        nThreadNum;         ///< [IN]  \~chinese çº¿ç¨‹æ•°é‡ï¼Œ0è¡¨ç¤ºç®—æ³•åº“æ ¹æ®ç¡¬ä»¶è‡ªé€‚åº”ï¼›1è¡¨ç¤ºå•çº¿ç¨‹ï¼ˆé»˜è®¤ï¼‰ï¼›å¤§äº1è¡¨ç¤ºçº¿ç¨‹æ•°ç›®      \~english Thread number, 0 means that the library is adaptive to the hardware, 1 means single thread(Default value), Greater than 1 indicates the number of threads
 
-    unsigned int        nRes[8];            ///<       \~chinese Ô¤Áô                           \~english Reserved
+    unsigned int        nRes[8];            ///<       \~chinese é¢„ç•™                           \~english Reserved
 
 }MV_CC_BAYER_NOISE_ESTIMATE_PARAM;
 
-/// \~chinese Bayer¸ñÊ½¿ÕÓò½µÔë²ÎÊı    \~english Bayer spatial Denoise param
+/// \~chinese Bayeræ ¼å¼ç©ºåŸŸé™å™ªå‚æ•°    \~english Bayer spatial Denoise param
 typedef struct _MV_CC_BAYER_SPATIAL_DENOISE_PARAM_T_
 {
-    unsigned int        nWidth;             ///< [IN]  \~chinese Í¼Ïñ¿í(´óÓÚµÈÓÚ8)              \~english Width
-    unsigned int        nHeight;            ///< [IN]  \~chinese Í¼Ïñ¸ß(´óÓÚµÈÓÚ8)              \~english Height
-    enum MvGvspPixelType    enPixelType;        ///< [IN]  \~chinese ÏñËØ¸ñÊ½                       \~english Pixel format
+    unsigned int        nWidth;             ///< [IN]  \~chinese å›¾åƒå®½(å¤§äºç­‰äº8)              \~english Width
+    unsigned int        nHeight;            ///< [IN]  \~chinese å›¾åƒé«˜(å¤§äºç­‰äº8)              \~english Height
+    enum MvGvspPixelType    enPixelType;        ///< [IN]  \~chinese åƒç´ æ ¼å¼                       \~english Pixel format
 
-    unsigned char*      pSrcData;           ///< [IN]  \~chinese ÊäÈëÊı¾İ»º´æ                   \~english Input data buffer
-    unsigned int        nSrcDataLen;        ///< [IN]  \~chinese ÊäÈëÊı¾İ´óĞ¡                   \~english Input data size
+    unsigned char*      pSrcData;           ///< [IN]  \~chinese è¾“å…¥æ•°æ®ç¼“å­˜                   \~english Input data buffer
+    unsigned int        nSrcDataLen;        ///< [IN]  \~chinese è¾“å…¥æ•°æ®å¤§å°                   \~english Input data size
 
-    unsigned char*      pDstBuf;            ///< [OUT] \~chinese Êä³ö½µÔëºóµÄÊı¾İ               \~english Output data buffer
-    unsigned int        nDstBufSize;        ///< [IN]  \~chinese Ìá¹©µÄÊä³ö»º³åÇø´óĞ¡           \~english Provided output buffer size
-    unsigned int        nDstBufLen;         ///< [OUT] \~chinese Êä³ö½µÔëºóµÄÊı¾İ³¤¶È           \~english Output data length
+    unsigned char*      pDstBuf;            ///< [OUT] \~chinese è¾“å‡ºé™å™ªåçš„æ•°æ®               \~english Output data buffer
+    unsigned int        nDstBufSize;        ///< [IN]  \~chinese æä¾›çš„è¾“å‡ºç¼“å†²åŒºå¤§å°           \~english Provided output buffer size
+    unsigned int        nDstBufLen;         ///< [OUT] \~chinese è¾“å‡ºé™å™ªåçš„æ•°æ®é•¿åº¦           \~english Output data length
 
-    MV_CC_BAYER_NOISE_PROFILE_INFO stNoiseProfile; ///< [IN]  \~chinese ½µÔëÌØĞÔĞÅÏ¢(À´Ô´ÓÚÔëÉù¹À¼Æ)   \~english Denoise profile
-    unsigned int        nDenoiseStrength;   ///< [IN]  \~chinese ½µÔëÇ¿¶È(0-100)                \~english nDenoise Strength   
-    unsigned int        nSharpenStrength;   ///< [IN]  \~chinese Èñ»¯Ç¿¶È(0-32)                 \~english Sharpen Strength
-    unsigned int        nNoiseCorrect;      ///< [IN]  \~chinese ÔëÉùĞ£ÕıÏµÊı(0-1280)           \~english Noise Correct  
+    MV_CC_BAYER_NOISE_PROFILE_INFO stNoiseProfile; ///< [IN]  \~chinese é™å™ªç‰¹æ€§ä¿¡æ¯(æ¥æºäºå™ªå£°ä¼°è®¡)   \~english Denoise profile
+    unsigned int        nDenoiseStrength;   ///< [IN]  \~chinese é™å™ªå¼ºåº¦(0-100)                \~english nDenoise Strength   
+    unsigned int        nSharpenStrength;   ///< [IN]  \~chinese é”åŒ–å¼ºåº¦(0-32)                 \~english Sharpen Strength
+    unsigned int        nNoiseCorrect;      ///< [IN]  \~chinese å™ªå£°æ ¡æ­£ç³»æ•°(0-1280)           \~english Noise Correct  
 
-    unsigned int        nThreadNum;         ///< [IN]  \~chinese Ïß³ÌÊıÁ¿£¬0±íÊ¾Ëã·¨¿â¸ù¾İÓ²¼ş×ÔÊÊÓ¦£»1±íÊ¾µ¥Ïß³Ì£¨Ä¬ÈÏ£©£»´óÓÚ1±íÊ¾Ïß³ÌÊıÄ¿         \~english Thread number, 0 means that the library is adaptive to the hardware, 1 means single thread(Default value), Greater than 1 indicates the number of threads
+    unsigned int        nThreadNum;         ///< [IN]  \~chinese çº¿ç¨‹æ•°é‡ï¼Œ0è¡¨ç¤ºç®—æ³•åº“æ ¹æ®ç¡¬ä»¶è‡ªé€‚åº”ï¼›1è¡¨ç¤ºå•çº¿ç¨‹ï¼ˆé»˜è®¤ï¼‰ï¼›å¤§äº1è¡¨ç¤ºçº¿ç¨‹æ•°ç›®         \~english Thread number, 0 means that the library is adaptive to the hardware, 1 means single thread(Default value), Greater than 1 indicates the number of threads
 
-    unsigned int        nRes[8];            ///<       \~chinese Ô¤Áô                           \~english Reserved
+    unsigned int        nRes[8];            ///<       \~chinese é¢„ç•™                           \~english Reserved
 
 }MV_CC_BAYER_SPATIAL_DENOISE_PARAM;
 
-/// \~chinese Ä³¸ö½Úµã¶ÔÓ¦µÄ×Ó½Úµã¸öÊı×î´óÖµ    \~english The maximum number of child nodes corresponding to a node
+/// \~chinese æŸä¸ªèŠ‚ç‚¹å¯¹åº”çš„å­èŠ‚ç‚¹ä¸ªæ•°æœ€å¤§å€¼    \~english The maximum number of child nodes corresponding to a node
 #define MV_MAX_XML_NODE_NUM_C       128
 
-/// \~chinese ½ÚµãÃû³Æ×Ö·û´®×î´ó³¤¶È            \~english The maximum length of node name string
+/// \~chinese èŠ‚ç‚¹åç§°å­—ç¬¦ä¸²æœ€å¤§é•¿åº¦            \~english The maximum length of node name string
 #define MV_MAX_XML_NODE_STRLEN_C    64
 
-/// \~chinese ½ÚµãStringÖµ×î´ó³¤¶È              \~english The maximum length of Node String
+/// \~chinese èŠ‚ç‚¹Stringå€¼æœ€å¤§é•¿åº¦              \~english The maximum length of Node String
 #define MV_MAX_XML_STRVALUE_STRLEN_C 64
 
-/// \~chinese ½ÚµãÃèÊö×Ö¶Î×î´ó³¤¶È              \~english The maximum length of the node description field
+/// \~chinese èŠ‚ç‚¹æè¿°å­—æ®µæœ€å¤§é•¿åº¦              \~english The maximum length of the node description field
 #define MV_MAX_XML_DISC_STRLEN_C    512
 
-/// \~chinese ×î¶àµÄµ¥ÔªÊı                      \~english The maximum number of units
+/// \~chinese æœ€å¤šçš„å•å…ƒæ•°                      \~english The maximum number of units
 #define MV_MAX_XML_ENTRY_NUM        10
 
-/// \~chinese ¸¸½Úµã¸öÊıÉÏÏŞ                    \~english The maximum number of parent nodes
+/// \~chinese çˆ¶èŠ‚ç‚¹ä¸ªæ•°ä¸Šé™                    \~english The maximum number of parent nodes
 #define MV_MAX_XML_PARENTS_NUM      8
 
-/// \~chinese Ã¿¸öÒÑ¾­ÊµÏÖµ¥ÔªµÄÃû³Æ³¤¶È        \~english The length of the name of each unit that has been implemented
+/// \~chinese æ¯ä¸ªå·²ç»å®ç°å•å…ƒçš„åç§°é•¿åº¦        \~english The length of the name of each unit that has been implemented
 #define MV_MAX_XML_SYMBOLIC_STRLEN_C 64
 
 enum MV_XML_Visibility
@@ -164,55 +164,55 @@ enum MV_XML_Visibility
     V_Undefined     = 99    ///< Object is not yet initialized
 };
 
-/// \~chinese µ¥¸ö½Úµã»ù±¾ÊôĞÔ | en:Single Node Basic Attributes
+/// \~chinese å•ä¸ªèŠ‚ç‚¹åŸºæœ¬å±æ€§ | en:Single Node Basic Attributes
 typedef struct _MV_XML_NODE_FEATURE_
 {
-    enum MV_XML_InterfaceType   enType;                             ///< \~chinese ½ÚµãÀàĞÍ         \~english Node Type
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Is visibility
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ½ÚµãÃèÊö,Ä¿Ç°Ôİ²»Ö§³Ö   \~english Node Description, NOT SUPPORT NOW
-    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese ÏÔÊ¾Ãû³Æ         \~english Display Name
-    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese ½ÚµãÃû           \~english Node Name
-    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese ÌáÊ¾             \~english Notice
+    enum MV_XML_InterfaceType   enType;                             ///< \~chinese èŠ‚ç‚¹ç±»å‹         \~english Node Type
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Is visibility
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese èŠ‚ç‚¹æè¿°,ç›®å‰æš‚ä¸æ”¯æŒ   \~english Node Description, NOT SUPPORT NOW
+    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese æ˜¾ç¤ºåç§°         \~english Display Name
+    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese èŠ‚ç‚¹å           \~english Node Name
+    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese æç¤º             \~english Notice
 
     unsigned int        nReserved[4];
 }MV_XML_NODE_FEATURE;
 
-/// \~chinese ½ÚµãÁĞ±í | en:Node List
+/// \~chinese èŠ‚ç‚¹åˆ—è¡¨ | en:Node List
 typedef struct _MV_XML_NODES_LIST_
 {
-    unsigned int        nNodeNum;       ///< \~chinese ½Úµã¸öÊı             \~english Node Number
+    unsigned int        nNodeNum;       ///< \~chinese èŠ‚ç‚¹ä¸ªæ•°             \~english Node Number
     MV_XML_NODE_FEATURE stNodes[MV_MAX_XML_NODE_NUM_C];
 }MV_XML_NODES_LIST;
 
 typedef struct _MV_XML_FEATURE_Value_
 {
-    enum MV_XML_InterfaceType   enType;                             ///< \~chinese ½ÚµãÀàĞÍ         \~english Node Type
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ½ÚµãÃèÊö,Ä¿Ç°Ôİ²»Ö§³Ö   \~english Node Description, NOT SUPPORT NOW
-    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese ÏÔÊ¾Ãû³Æ         \~english Display Name
-    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese ½ÚµãÃû           \~english Node Name
-    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese ÌáÊ¾             \~english Notice
+    enum MV_XML_InterfaceType   enType;                             ///< \~chinese èŠ‚ç‚¹ç±»å‹         \~english Node Type
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese èŠ‚ç‚¹æè¿°,ç›®å‰æš‚ä¸æ”¯æŒ   \~english Node Description, NOT SUPPORT NOW
+    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese æ˜¾ç¤ºåç§°         \~english Display Name
+    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese èŠ‚ç‚¹å           \~english Node Name
+    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese æç¤º             \~english Notice
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Value;
 
 typedef struct _MV_XML_FEATURE_Base_
 {
-    enum MV_XML_AccessMode enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
+    enum MV_XML_AccessMode enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
 }MV_XML_FEATURE_Base;
 
 typedef struct _MV_XML_FEATURE_Integer_
 {
     char                strName[MV_MAX_XML_NODE_STRLEN_C];
     char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese Ä¿Ç°Ôİ²»Ö§³Ö     \~english NOT SUPPORT NOW
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ç›®å‰æš‚ä¸æ”¯æŒ     \~english NOT SUPPORT NOW
     char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
-    int64_t             nValue;                                     ///< \~chinese µ±Ç°Öµ           \~english Current Value
-    int64_t             nMinValue;                                  ///< \~chinese ×îĞ¡Öµ           \~english Min Value
-    int64_t             nMaxValue;                                  ///< \~chinese ×î´óÖµ           \~english Max Value
-    int64_t             nIncrement;                                 ///< \~chinese ÔöÁ¿             \~english Increment
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    int64_t             nValue;                                     ///< \~chinese å½“å‰å€¼           \~english Current Value
+    int64_t             nMinValue;                                  ///< \~chinese æœ€å°å€¼           \~english Min Value
+    int64_t             nMaxValue;                                  ///< \~chinese æœ€å¤§å€¼           \~english Max Value
+    int64_t             nIncrement;                                 ///< \~chinese å¢é‡             \~english Increment
 
     unsigned int        nReserved[4];
 
@@ -222,13 +222,13 @@ typedef struct _MV_XML_FEATURE_Boolean_
 {
     char                strName[MV_MAX_XML_NODE_STRLEN_C];
     char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese Ä¿Ç°Ôİ²»Ö§³Ö     \~english NOT SUPPORT NOW
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ç›®å‰æš‚ä¸æ”¯æŒ     \~english NOT SUPPORT NOW
     char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
-    bool                bValue;                                     ///< \~chinese µ±Ç°Öµ           \~english Current Value
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    bool                bValue;                                     ///< \~chinese å½“å‰å€¼           \~english Current Value
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Boolean;
@@ -237,12 +237,12 @@ typedef struct _MV_XML_FEATURE_Command_
 {
     char                strName[MV_MAX_XML_NODE_STRLEN_C];
     char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese Ä¿Ç°Ôİ²»Ö§³Ö     \~english NOT SUPPORT NOW
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ç›®å‰æš‚ä¸æ”¯æŒ     \~english NOT SUPPORT NOW
     char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Command;
@@ -251,16 +251,16 @@ typedef struct _MV_XML_FEATURE_Float_
 {
     char                strName[MV_MAX_XML_NODE_STRLEN_C];
     char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese Ä¿Ç°Ôİ²»Ö§³Ö     \~english NOT SUPPORT NOW
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ç›®å‰æš‚ä¸æ”¯æŒ     \~english NOT SUPPORT NOW
     char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
-    double              dfValue;                                    ///< \~chinese µ±Ç°Öµ           \~english Current Value
-    double              dfMinValue;                                 ///< \~chinese ×îĞ¡Öµ           \~english Min Value
-    double              dfMaxValue;                                 ///< \~chinese ×î´óÖµ           \~english Max Value
-    double              dfIncrement;                                ///< \~chinese ÔöÁ¿             \~english Increment
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    double              dfValue;                                    ///< \~chinese å½“å‰å€¼           \~english Current Value
+    double              dfMinValue;                                 ///< \~chinese æœ€å°å€¼           \~english Min Value
+    double              dfMaxValue;                                 ///< \~chinese æœ€å¤§å€¼           \~english Max Value
+    double              dfIncrement;                                ///< \~chinese å¢é‡             \~english Increment
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Float;
@@ -269,13 +269,13 @@ typedef struct _MV_XML_FEATURE_String_
 {
     char                strName[MV_MAX_XML_NODE_STRLEN_C];
     char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese Ä¿Ç°Ôİ²»Ö§³Ö     \~english NOT SUPPORT NOW
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ç›®å‰æš‚ä¸æ”¯æŒ     \~english NOT SUPPORT NOW
     char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
-    char                strValue[MV_MAX_XML_STRVALUE_STRLEN_C];     ///< \~chinese µ±Ç°Öµ           \~english Current Value
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    char                strValue[MV_MAX_XML_STRVALUE_STRLEN_C];     ///< \~chinese å½“å‰å€¼           \~english Current Value
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_String;
@@ -284,25 +284,25 @@ typedef struct _MV_XML_FEATURE_Register_
 {
     char                strName[MV_MAX_XML_NODE_STRLEN_C];
     char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese Ä¿Ç°Ôİ²»Ö§³Ö     \~english NOT SUPPORT NOW
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ç›®å‰æš‚ä¸æ”¯æŒ     \~english NOT SUPPORT NOW
     char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
-    int64_t             nAddrValue;                                 ///< \~chinese µ±Ç°Öµ           \~english Current Value
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    int64_t             nAddrValue;                                 ///< \~chinese å½“å‰å€¼           \~english Current Value
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Register;
 
 typedef struct _MV_XML_FEATURE_Category_
 {
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ½ÚµãÃèÊö Ä¿Ç°Ôİ²»Ö§³Ö    \~english Node Description, NOT SUPPORT NOW
-    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese ÏÔÊ¾Ãû³Æ         \~english Display Name
-    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese ½ÚµãÃû           \~english Node Name
-    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese ÌáÊ¾             \~english Notice
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese èŠ‚ç‚¹æè¿° ç›®å‰æš‚ä¸æ”¯æŒ    \~english Node Description, NOT SUPPORT NOW
+    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese æ˜¾ç¤ºåç§°         \~english Display Name
+    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese èŠ‚ç‚¹å           \~english Node Name
+    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese æç¤º             \~english Notice
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Category;
@@ -311,48 +311,48 @@ typedef struct _MV_XML_FEATURE_EnumEntry_
 {
     char                strName[MV_MAX_XML_NODE_STRLEN_C];
     char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese Ä¿Ç°Ôİ²»Ö§³Ö     \~english NOT SUPPORT NOW
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ç›®å‰æš‚ä¸æ”¯æŒ     \~english NOT SUPPORT NOW
     char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];
     int                 bIsImplemented;
     int                 nParentsNum;
     MV_XML_NODE_FEATURE stParentsList[MV_MAX_XML_PARENTS_NUM];
 
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    int64_t             nValue;                                     ///< \~chinese µ±Ç°Öµ           \~english Current Value
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    int64_t             nValue;                                     ///< \~chinese å½“å‰å€¼           \~english Current Value
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
     int                 nReserved[8];
 
 }MV_XML_FEATURE_EnumEntry;
 
 typedef struct _MV_XML_FEATURE_Enumeration_
 {
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ½ÚµãÃèÊö Ä¿Ç°Ôİ²»Ö§³Ö    \~english Node Description, NOT SUPPORT NOW
-    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese ÏÔÊ¾Ãû³Æ         \~english Display Name
-    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese ½ÚµãÃû           \~english Node Name
-    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese ÌáÊ¾             \~english Notice
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese èŠ‚ç‚¹æè¿° ç›®å‰æš‚ä¸æ”¯æŒ    \~english Node Description, NOT SUPPORT NOW
+    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese æ˜¾ç¤ºåç§°         \~english Display Name
+    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese èŠ‚ç‚¹å           \~english Node Name
+    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese æç¤º             \~english Notice
 
-    int                 nSymbolicNum;                               ///< \~chinese ymbolicÊı        \~english Symbolic Number
-    char                strCurrentSymbolic[MV_MAX_XML_SYMBOLIC_STRLEN_C];///< \~chinese µ±Ç°SymbolicË÷Òı    \~english Current Symbolic Index
+    int                 nSymbolicNum;                               ///< \~chinese ymbolicæ•°        \~english Symbolic Number
+    char                strCurrentSymbolic[MV_MAX_XML_SYMBOLIC_STRLEN_C];///< \~chinese å½“å‰Symbolicç´¢å¼•    \~english Current Symbolic Index
     char                strSymbolic[MV_MAX_XML_SYMBOLIC_NUM][MV_MAX_XML_SYMBOLIC_STRLEN_C];
-    enum MV_XML_AccessMode   enAccessMode;                          ////< \~chinese ·ÃÎÊÄ£Ê½        \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
-    int64_t             nValue;                                     ///< \~chinese µ±Ç°Öµ           \~english Current Value
+    enum MV_XML_AccessMode   enAccessMode;                          ////< \~chinese è®¿é—®æ¨¡å¼        \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    int64_t             nValue;                                     ///< \~chinese å½“å‰å€¼           \~english Current Value
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Enumeration;
 
 typedef struct _MV_XML_FEATURE_Port_
 {
-    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese ÊÇ·ñ¿É¼û         \~english Visible
-    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese ½ÚµãÃèÊö,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Node Description, NOT SUPPORT NOW
-    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese ÏÔÊ¾Ãû³Æ         \~english Display Name
-    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese ½ÚµãÃû           \~english Node Name
-    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese ÌáÊ¾             \~english Notice
+    enum MV_XML_Visibility  enVisivility;                           ///< \~chinese æ˜¯å¦å¯è§         \~english Visible
+    char                strDescription[MV_MAX_XML_DISC_STRLEN_C];   ///< \~chinese èŠ‚ç‚¹æè¿°,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Node Description, NOT SUPPORT NOW
+    char                strDisplayName[MV_MAX_XML_NODE_STRLEN_C];   ///< \~chinese æ˜¾ç¤ºåç§°         \~english Display Name
+    char                strName[MV_MAX_XML_NODE_STRLEN_C];          ///< \~chinese èŠ‚ç‚¹å           \~english Node Name
+    char                strToolTip[MV_MAX_XML_DISC_STRLEN_C];       ///< \~chinese æç¤º             \~english Notice
 
-    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese ·ÃÎÊÄ£Ê½         \~english Access Mode
-    int                 bIsLocked;                                  ///< \~chinese ÊÇ·ñËø¶¨¡£0-·ñ£»1-ÊÇ,Ä¿Ç°Ôİ²»Ö§³Ö    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
+    enum MV_XML_AccessMode  enAccessMode;                           ///< \~chinese è®¿é—®æ¨¡å¼         \~english Access Mode
+    int                 bIsLocked;                                  ///< \~chinese æ˜¯å¦é”å®šã€‚0-å¦ï¼›1-æ˜¯,ç›®å‰æš‚ä¸æ”¯æŒ    \~english Locked. 0-NO; 1-YES, NOT SUPPORT NOW
 
     unsigned int        nReserved[4];
 }MV_XML_FEATURE_Port;
